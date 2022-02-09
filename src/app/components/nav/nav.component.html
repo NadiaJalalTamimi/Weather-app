@@ -15,13 +15,13 @@
         d="M10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6m13.12 2.88-4.26-4.26A9.842 9.842 0 0 0 20 10c0-5.52-4.48-10-10-10S0 4.48 0 10s4.48 10 10 10c1.67 0 3.24-.41 4.62-1.14l4.26 4.26a3 3 0 0 0 4.24 0 3 3 0 0 0 0-4.24"
       ></path>
     </svg>
-    <form (submit)="onSubmit($event)">
+    <form (submit)="onSubmit()">
       <input placeholder="where are you from?" (input)="setQuery($event)"/>
     </form>
   </div>
   <div class="dropdown">
     <!-- <button (click)="myFunction()" class="dropbtn">ِAll <img src="../../../assets/down-2s-200px.svg" alt=""></button> -->
-    <select (change)="setRigon($event)" class="dropbtn">
+    <select (change)="setRegion($event)" class="dropbtn">
       <option value="all">All</option>
       <option value="asia">Asia</option>
       <option value="Africa">Africa</option>

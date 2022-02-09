@@ -11,4 +11,10 @@ export class ApiService {
   check(){
     return this.Http.get("https://restcountries.com/v3.1/all");
   }
+  getRegion(value: string){
+    return this.Http.get(`https://restcountries.com/v3.1/region/${value}`);
+  }
+  getSearch(name: string){
+    return this.Http.get(`https://restcountries.com/v3.1/name/${name}`);
+  }
 }

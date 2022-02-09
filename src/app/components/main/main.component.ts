@@ -1,5 +1,6 @@
 import { ApiService } from './../../srvices/api.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,18 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   countryData: any = [];
-  constructor(private Api: ApiService) {
-    this.Api.check().subscribe(
-      (data: any) => {
+  region:string = "";
+  name:any = "";
+  constructor(private Api: ApiService, private route: ActivatedRoute) {
+ 
+
+    this.region = this.route.snapshot.paramMap.get('region') || ''
+    this.name = this.route.snapshot.paramMap.get('name') || ''
+    if(this.region){
+      this.Api.getRegion(this.region).subscribe((data: any) => {
         this.countryData = data;
-        console.log(this.countryData);
-        
-      },
-      () => {
-        console.log('api error');
-      }
-    );
+      } );
+    }else if (this.name){
+      this.Api.getSearch(this.name).subscribe((data:any) => {
+        this.countryData = data;
+      });
+    }
+    else {
+      this.Api.check().subscribe(
+        (data: any) => {
+          this.countryData = data;
+        },
+        () => {
+          console.log('api error');
+        }
+      );
+    }
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   
+  }
 }

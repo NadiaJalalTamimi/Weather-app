@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,21 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 query:string =""
-  constructor() { }
+
+  constructor(private router:Router) { 
+    
+  }
 
   ngOnInit(): void {
   }
   myFunction(){
     
   }
-  setRigon(event:any){
-    console.log(event.target.value)
+  setRegion(event:any){
+     this.router.navigate([`region/${event.target.value}`])
   }
   setQuery(event:any){
     this.query=event.target.value;
   }
-  onSubmit(event:any){
-    event.preventDefault();
-    console.log(this.query)
+  
+  onSubmit(){
+    console.log(this.query);
+     this.router.navigate([`name/${this.query}`])
   }
 }
