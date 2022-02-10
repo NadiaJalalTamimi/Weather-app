@@ -8,13 +8,15 @@ import { MainComponent } from './components/main/main.component';
 import { CardComponent } from './components/card/card.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CardDetailsComponent } from './components/card-details/card-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     MainComponent,
-    CardComponent
+    CardComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule,

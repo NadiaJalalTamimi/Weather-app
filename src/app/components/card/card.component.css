@@ -10,6 +10,7 @@
     box-shadow: 0 4px 32px 0 rgb(0, 0, 0, 0.37);
     border-radius: 20px;
     overflow: hidden;
+    cursor: pointer;
 }
 .cover{
     width: 100%;

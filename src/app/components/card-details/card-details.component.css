@@ -1,0 +1,14 @@
+.card-details-container{
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.subregion{
+    width: 100%;
+    margin-top:90px ;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    gap: 20px;
+    justify-content: center;
+}

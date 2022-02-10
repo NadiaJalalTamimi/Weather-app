@@ -1,0 +1,18 @@
+<div class="card-details-container" *ngIf="countryData[0]">
+    <div class="country-flag">
+        <img [src]="countryData[0].flags.png" alt=""> 
+    </div>
+    <div class="country-details">
+    <div><span>{{countryData[0].name.common}}</span></div>
+        <div><span>population : </span><span>{{countryData[0].population}}</span></div>
+        <div><span>continents : </span><span>{{countryData[0].continents[0]}}</span></div>
+        <div><span>subregion : </span><span>{{countryData[0].subregion}}</span></div>
+        <div><span>independent : </span><span>{{countryData[0].independent}}</span></div>
+        <div><span>timezones : </span><span>{{countryData[0].timezones[0]}}</span></div>
+        <div><span>Google map : </span><a [href]="countryData[0].maps.googleMaps">google map</a></div>
+        
+    </div>
+</div>
+ <div class="subregion">
+    <app-card *ngFor="let item of listSubregion" [item]="item"></app-card>
+</div>

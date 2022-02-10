@@ -17,4 +17,7 @@ export class ApiService {
   getSearch(name: string){
     return this.Http.get(`https://restcountries.com/v3.1/name/${name}`);
   }
+  getSubregion(name: string){
+    return this.Http.get(`https://restcountries.com/v3.1/subregion/${name}`);
+  }
 }

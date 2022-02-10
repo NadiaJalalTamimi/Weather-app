@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 @Input() item:any;
-  constructor() { 
+  constructor( private router:Router) { 
     
   }
 
   ngOnInit(): void {
 
+  }
+  countryDetails(name:string){
+    this.router.navigate([`details/${name}`])
   }
 
 }

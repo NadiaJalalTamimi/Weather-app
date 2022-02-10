@@ -12,29 +12,29 @@ export class MainComponent implements OnInit {
   region:string = "";
   name:any = "";
   constructor(private Api: ApiService, private route: ActivatedRoute) {
- 
-
-    this.region = this.route.snapshot.paramMap.get('region') || ''
-    this.name = this.route.snapshot.paramMap.get('name') || ''
-    if(this.region){
-      this.Api.getRegion(this.region).subscribe((data: any) => {
-        this.countryData = data;
-      } );
-    }else if (this.name){
-      this.Api.getSearch(this.name).subscribe((data:any) => {
-        this.countryData = data;
-      });
-    }
-    else {
-      this.Api.check().subscribe(
-        (data: any) => {
-          this.countryData = data;
-        },
-        () => {
-          console.log('api error');
-        }
-      );
-    }
+ this.route.paramMap.subscribe(params => {
+       this.region = params.get('region') || ''
+       this.name = params.get('name') || ''
+       if(this.region){
+         this.Api.getRegion(this.region).subscribe((data: any) => {
+           this.countryData = data;
+         } );
+       }else if (this.name){
+         this.Api.getSearch(this.name).subscribe((data:any) => {
+           this.countryData = data;
+         });
+       }
+       else {
+         this.Api.check().subscribe(
+           (data: any) => {
+             this.countryData = data;
+           },
+           () => {
+             console.log('api error');
+           }
+         );
+       }
+ })
 
   }
 

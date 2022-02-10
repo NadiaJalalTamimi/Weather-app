@@ -1,9 +1,9 @@
-<div class="card">
+<div (click)="countryDetails(item.name.common)" class="card">
     <div class="cover">
         <img src={{item.flags.png}} alt=""> 
     </div>
     <div class="details">
-        <span class="title">{{item.altSpellings[1]}}</span>
+        <span class="title">{{item.name.common}}</span>
        <div class="for-margin-top">
            <span class="name">Population : </span>
             <span>{{item.population}}</span>
