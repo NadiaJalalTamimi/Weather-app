@@ -21,7 +21,7 @@ export class CardDetailsComponent implements OnInit {
                 this.countryData = data;
                 console.log(data);
                 this.Api.getSubregion(data[0].subregion).subscribe((data:any) => {
-                  this.listSubregion = data;
+                  this.listSubregion = data?.filter((element:any) => element.name.common != this.name && element.name.common != 'Israel');
                   console.log(data);
                   
                 });

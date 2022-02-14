@@ -1,32 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-query:string =""
+  query: string = '';
+@Output() mode:string="light"
+  constructor(private router: Router ) {}
 
-  constructor(private router:Router) { 
-    
+  ngOnInit(): void {}
+  setRegion(event: any) {
+    this.router.navigate([`region/${event.target.value}`]);
+  }
+  setQuery(event: any) {
+    this.query = event.target.value;
   }
 
-  ngOnInit(): void {
-  }
-  myFunction(){
-    
-  }
-  setRegion(event:any){
-     this.router.navigate([`region/${event.target.value}`])
-  }
-  setQuery(event:any){
-    this.query=event.target.value;
-  }
-  
-  onSubmit(){
+  onSubmit() {
     console.log(this.query);
-     this.router.navigate([`name/${this.query}`])
+    this.router.navigate([`name/${this.query}`]);
   }
+
 }

@@ -1,6 +1,6 @@
 <nav>
-  <button class="black-light-mode">
-    <img src="../../../assets/moon-4.5s-200px (1).svg" alt="" />
+  <button class="black-light-mode" (click)="toggleTheme()">
+    <img src="../../../assets/moon-4.5s-200px (1).svg" alt=""  />
   </button>
   <div class="input-search">
     <svg
@@ -20,7 +20,6 @@
     </form>
   </div>
   <div class="dropdown">
-    <!-- <button (click)="myFunction()" class="dropbtn">ِAll <img src="../../../assets/down-2s-200px.svg" alt=""></button> -->
     <select (change)="setRegion($event)" class="dropbtn">
       <option value="all">All</option>
       <option value="asia">Asia</option>

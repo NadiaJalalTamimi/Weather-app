@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 @Input() item:any;
+@Input() mode:any;
   constructor( private router:Router) { 
     
   }

@@ -36,3 +36,9 @@
 .for-margin-top{
     margin-top: 20px;
 }
+.light .card {
+    background-color: blue;
+  }
+.dark .card {
+    background-color: red;
+  }

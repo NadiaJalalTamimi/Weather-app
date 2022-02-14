@@ -4,4 +4,9 @@ import { MainComponent } from "./main/main.component";
 import { CardDetailsComponent } from './card-details/card-details.component';
 
 
-export module componants {}
+export const Componants = [
+    CardComponent,
+    NavComponent,
+    MainComponent,
+    CardDetailsComponent
+]

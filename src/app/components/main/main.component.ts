@@ -1,5 +1,5 @@
 import { ApiService } from './../../srvices/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
   countryData: any = [];
   region:string = "";
   name:any = "";
+  @Input() mode:any;
   constructor(private Api: ApiService, private route: ActivatedRoute) {
  this.route.paramMap.subscribe(params => {
        this.region = params.get('region') || ''
